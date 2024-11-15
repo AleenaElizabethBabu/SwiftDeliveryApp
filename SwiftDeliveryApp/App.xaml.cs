@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace SwiftDeliveryApp
 {
@@ -9,20 +7,7 @@ namespace SwiftDeliveryApp
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
-        }
-
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
+            MainPage = new NavigationPage(new LoginPage());
         }
     }
 }

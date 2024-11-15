@@ -1,0 +1,12 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SwiftDeliveryApp.RegistrationPage"
+             Title="Register">
+    <StackLayout Padding="30">
+        <Entry Placeholder="Full Name" x:Name="NameEntry"/>
+        <Entry Placeholder="Email" x:Name="EmailEntry"/>
+        <Entry Placeholder="Password" x:Name="PasswordEntry" IsPassword="True"/>
+        <Entry Placeholder="Confirm Password" x:Name="ConfirmPasswordEntry" IsPassword="True"/>
+        <Button Text="Register" Clicked="OnRegisterButtonClicked"/>
+    </StackLayout>
+</ContentPage>
