@@ -9,5 +9,7 @@ namespace SwiftDeliveryApp
             InitializeComponent();
             MainPage = new NavigationPage(new LoginPage());
         }
+
+
     }
 }

@@ -2,9 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SwiftDeliveryApp.HomePage"
              Title="Home">
-    <StackLayout Padding="30">
-        <Label Text="Welcome to Swift Delivery!" FontSize="24" HorizontalOptions="Center"/>
-        <SearchBar Placeholder="Search by cuisine or price"/>
-        <!-- Add filtering or listings as needed -->
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Label Text="Welcome to Swift Delivery!" FontSize="24" />
     </StackLayout>
 </ContentPage>

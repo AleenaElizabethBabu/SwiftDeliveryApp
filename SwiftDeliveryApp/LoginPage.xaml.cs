@@ -10,15 +10,13 @@ namespace SwiftDeliveryApp
             InitializeComponent();
         }
 
-        async void OnLoginButtonClicked(object sender, EventArgs e)
+        private async void OnLoginButtonClicked(object sender, EventArgs e)
         {
-            // For now, navigate to HomePage directly without authentication.
-            await Navigation.PushAsync(new HomePage());
-        }
+            // Placeholder login logic
+            await DisplayAlert("Login", "Welcome to Swift Delivery!", "OK");
 
-        async void OnRegisterButtonClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new RegistrationPage());
+            // Navigate to the HomePage (create this page if not already done)
+            await Navigation.PushAsync(new HomePage());
         }
     }
 }

@@ -2,10 +2,71 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SwiftDeliveryApp.LoginPage"
              Title="Login">
-    <StackLayout Padding="30">
-        <Entry Placeholder="Email" x:Name="EmailEntry"/>
-        <Entry Placeholder="Password" x:Name="PasswordEntry" IsPassword="True"/>
-        <Button Text="Login" Clicked="OnLoginButtonClicked"/>
-        <Button Text="Register" Clicked="OnRegisterButtonClicked"/>
+    <StackLayout BackgroundColor="#ffffff" Padding="10">
+
+        <!-- Header Section -->
+        <StackLayout HorizontalOptions="Center" Padding="10">
+            <Label Text="SWIFT" 
+                   FontSize="36" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="#000000" />
+            <Label Text="The fastest reliable food delivery service"
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   TextColor="#000000" />
+        </StackLayout>
+
+        <!-- Image -->
+        <Image Source="food_image.png" 
+               HorizontalOptions="Center" 
+               Aspect="AspectFit"
+               HeightRequest="150" />
+
+        <!-- Sign In / Sign Up Tabs -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Padding="10,0">
+            <Label Text="Sign In" 
+                   FontSize="18" 
+                   TextColor="#FF4500"
+                   FontAttributes="Bold" />
+            <Label Text="Sign Up" 
+                   FontSize="18"
+                   TextColor="#808080" />
+        </StackLayout>
+        <BoxView HeightRequest="2" BackgroundColor="#FF4500" Margin="20,0,20,20"/>
+
+        <!-- Input Fields -->
+        <StackLayout Padding="10">
+            <Entry Placeholder="E-mail address" 
+                   BackgroundColor="#ffffff"
+                   PlaceholderColor="#808080" 
+                   TextColor="#000000" 
+                   HeightRequest="50"
+                   Margin="0,10" />
+
+            <Entry Placeholder="Enter password" 
+                   IsPassword="True"
+                   BackgroundColor="#ffffff"
+                   PlaceholderColor="#808080" 
+                   TextColor="#000000"
+                   HeightRequest="50" />
+
+            <!-- Remember Me & Forgot Password -->
+            <StackLayout Orientation="Horizontal" Padding="0,10">
+                <CheckBox Color="#FF4500" />
+                <Label Text="Remember me" VerticalTextAlignment="Center" />
+                <Label Text="Forgot password?" HorizontalOptions="EndAndExpand" TextColor="#808080" VerticalTextAlignment="Center" />
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Login Button -->
+        <Button Text="Login" 
+                BackgroundColor="#FF4500" 
+                TextColor="#FFFFFF" 
+                FontAttributes="Bold" 
+                CornerRadius="20" 
+                HeightRequest="50"
+                Margin="20,10"
+                Clicked="OnLoginButtonClicked" />
     </StackLayout>
 </ContentPage>
