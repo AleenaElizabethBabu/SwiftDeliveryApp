@@ -1,8 +1,32 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SwiftDeliveryApp.HomePage"
-             Title="Home">
-    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-        <Label Text="Welcome to Swift Delivery!" FontSize="24" />
+             Title="Restaurants">
+    <StackLayout BackgroundColor="#ffffff" Padding="10">
+        <!-- Header -->
+        <Label Text="*CATEGORIES"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#7F00FF"
+               Margin="10" />
+
+        <!-- Restaurant List -->
+        <CollectionView x:Name="RestaurantCollectionView" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="10" Padding="10" CornerRadius="10" BackgroundColor="#f8f8f8">
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image Source="{Binding Image}" WidthRequest="80" HeightRequest="80" Aspect="AspectFill" />
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" TextColor="#000000" />
+                                <Label Text="{Binding Cuisine}" FontSize="14" TextColor="#808080" />
+                                <Label Text="{Binding Rating}" FontSize="14" TextColor="#FFA500" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </StackLayout>
 </ContentPage>
