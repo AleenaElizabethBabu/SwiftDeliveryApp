@@ -3,24 +3,26 @@
              x:Class="SwiftDeliveryApp.HomePage"
              Title="Categories">
     <StackLayout BackgroundColor="#f7f3fc" Padding="20">
-        <!-- Search Bar -->
-        <SearchBar x:Name="SearchBar"
-                   Placeholder="Search categories"
-                   TextChanged="OnSearchBarTextChanged"
-                   FontSize="16"
-                   BackgroundColor="#ffffff"
-                   PlaceholderColor="#808080"
-                   TextColor="#000000"
-                   HorizontalOptions="FillAndExpand"
-                   Margin="0,0,0,20" />
+        <!-- Search Bar and Add Button -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+            <SearchBar x:Name="SearchBar"
+                       Placeholder="Search"
+                       FontSize="16"
+                       BackgroundColor="#ffffff"
+                       PlaceholderColor="#808080"
+                       TextColor="#000000"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="0,0,10,0" />
+            <Button Text="+" FontSize="24" BackgroundColor="#d7c9e7" TextColor="#ffffff" CornerRadius="25" WidthRequest="50" HeightRequest="50" />
+        </StackLayout>
 
         <!-- Title -->
         <Label Text="CATEGORIES"
-               FontSize="20"
+               FontSize="24"
                FontAttributes="Bold"
                HorizontalOptions="Center"
                TextColor="#9c27b0"
-               Margin="0,0,0,10" />
+               Margin="0,20,0,10" />
 
         <!-- Grid for Categories -->
         <Grid x:Name="CategoryGrid"
@@ -30,16 +32,71 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+
+            <!-- Category Items -->
+            <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image Source="pasta.png" WidthRequest="100" HeightRequest="100">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="PASTA" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="PASTA" FontSize="16" HorizontalOptions="Center" TextColor="#000000" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image Source="burger.png" WidthRequest="100" HeightRequest="100">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="BURGER" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="BURGER" FontSize="16" HorizontalOptions="Center" TextColor="#000000" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image Source="mexican.png" WidthRequest="100" HeightRequest="100">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="MEXICAN" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="MEXICAN" FontSize="16" HorizontalOptions="Center" TextColor="#000000" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image Source="pizza.png" WidthRequest="100" HeightRequest="100">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="PIZZA" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="PIZZA" FontSize="16" HorizontalOptions="Center" TextColor="#000000" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image Source="poutine.png" WidthRequest="100" HeightRequest="100">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="POUTINE" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="POUTINE" FontSize="16" HorizontalOptions="Center" TextColor="#000000" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image Source="desserts.png" WidthRequest="100" HeightRequest="100">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCategoryTapped" CommandParameter="DESSERTS" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="DESSERTS" FontSize="16" HorizontalOptions="Center" TextColor="#000000" />
+            </StackLayout>
         </Grid>
 
         <!-- Footer -->
-        <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="Center" Margin="0,10,0,0">
-            <Image Source="logo.png" WidthRequest="100" HeightRequest="80" />
-            <Label Text="EAT HEALTHY"
-                   FontSize="15"
+        <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="Center" Margin="0,20,0,0">
+            <Image Source="logo.png" WidthRequest="150" HeightRequest="150" />
+            <Label Text="SWIFT EAT HEALTHY"
+                   FontSize="18"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
-                   TextColor="#A020F0" />
+                   TextColor="#000000" />
         </StackLayout>
     </StackLayout>
 </ContentPage>

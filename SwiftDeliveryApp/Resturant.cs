@@ -1,4 +1,4 @@
-﻿namespace SwiftDeliveryApp
+﻿namespace SwiftDeliveryApp.Models
 {
     public class Restaurant
     {
@@ -6,5 +6,6 @@
         public string Cuisine { get; set; }
         public string Rating { get; set; }
         public string Image { get; set; }
+        public string Category { get; set; }
     }
 }
