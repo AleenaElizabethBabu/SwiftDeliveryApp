@@ -1,32 +1,45 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SwiftDeliveryApp.HomePage"
-             Title="Restaurants">
-    <StackLayout BackgroundColor="#ffffff" Padding="10">
-        <!-- Header -->
-        <Label Text="*CATEGORIES"
-               FontSize="24"
+             Title="Categories">
+    <StackLayout BackgroundColor="#f7f3fc" Padding="20">
+        <!-- Search Bar -->
+        <SearchBar x:Name="SearchBar"
+                   Placeholder="Search categories"
+                   TextChanged="OnSearchBarTextChanged"
+                   FontSize="16"
+                   BackgroundColor="#ffffff"
+                   PlaceholderColor="#808080"
+                   TextColor="#000000"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="0,0,0,20" />
+
+        <!-- Title -->
+        <Label Text="CATEGORIES"
+               FontSize="20"
                FontAttributes="Bold"
                HorizontalOptions="Center"
-               TextColor="#7F00FF"
-               Margin="10" />
+               TextColor="#9c27b0"
+               Margin="0,0,0,10" />
 
-        <!-- Restaurant List -->
-        <CollectionView x:Name="RestaurantCollectionView" SelectionMode="None">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame Margin="10" Padding="10" CornerRadius="10" BackgroundColor="#f8f8f8">
-                        <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Image Source="{Binding Image}" WidthRequest="80" HeightRequest="80" Aspect="AspectFill" />
-                            <StackLayout VerticalOptions="Center">
-                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" TextColor="#000000" />
-                                <Label Text="{Binding Cuisine}" FontSize="14" TextColor="#808080" />
-                                <Label Text="{Binding Rating}" FontSize="14" TextColor="#FFA500" />
-                            </StackLayout>
-                        </StackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <!-- Grid for Categories -->
+        <Grid x:Name="CategoryGrid"
+              ColumnSpacing="10"
+              RowSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <!-- Footer -->
+        <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="Center" Margin="0,10,0,0">
+            <Image Source="logo.png" WidthRequest="100" HeightRequest="80" />
+            <Label Text="EAT HEALTHY"
+                   FontSize="15"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#A020F0" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>
